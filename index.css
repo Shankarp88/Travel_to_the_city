@@ -1,23 +1,22 @@
-#movie-cont{
-
+#movie-cont {
     float:left;
     margin-left: 5px;
     padding-left: 5px;
     border: 2px solid green;
-    
-    }
-    #date-picker-cont{
-        padding-left: 7px;
-    }
-    #wez-type{
-        background-color: greenyellow;
-        padding: 7px;
-        margin: 7px;
-        background-color: rgb(57, 80, 184);
-        border-radius: 25px;
-        
+}
 
-    }
-    body{
-        background-image: url("https://trello-backgrounds.s3.amazonaws.com/SharedBackground/original/62e82e1930f6baca939a2d765312efb0/photo-1581896184337-1330180ac3e6");
-    }
+#date-picker-cont {
+    padding-left: 7px;
+}
+
+#wez-type {
+    background-color: greenyellow;
+    padding: 7px;
+    margin: 7px;
+    background-color: rgb(57, 80, 184);
+    border-radius: 25px;
+}
+
+body {
+    background-image: url("https://trello-backgrounds.s3.amazonaws.com/SharedBackground/original/62e82e1930f6baca939a2d765312efb0/photo-1581896184337-1330180ac3e6");
+}
