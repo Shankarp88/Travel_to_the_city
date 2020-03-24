@@ -26,42 +26,61 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/css/bootstrap-datetimepicker.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="about.css">
   <title>TravelToTheCity</title>
 </head>
 
 <body>
-  <div class="movie-cont">
-    <div id= "date-picker-cont">
-      <h3>Date Picker</h3>
-      <div class='input-group date' id='picker' style="width: 400px">
-        <input type="text" id="picker" class="form-control" placeholder="Select Date">
-        <span class="input-group-addon">
-          <span class="glyphicon glyphicon-calendar"></span>
-        </span>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-12 header text-center">
-        <button id="weatherbutton">City Weather Forecast</button>
+    <div id="map-canvas">
+        <div class="hotel-search">
+            <div id="findhotels">
+            Find tourist attractions in:
+            </div>
 
-      </div>
-      <div id="movie-cont" class="row">
-        <div class="col-12 results">
-
-          <!-- Weather SHOW UP HERE! -->
+            <div id="locationField">
+            <input id="autocomplete" placeholder="Enter a city" type="text" />
+            </div>
 
         </div>
 
+        <div id="map"></div>
 
+        <div id="listing">
+            <table id="resultsTable">
+            <tbody id="results"></tbody>
+            </table>
+        </div>
 
-      </div>
-
+        <div style="display: none">
+            <div id="info-content">
+            <table>
+                <tr id="iw-url-row" class="iw_table_row">
+                <td id="iw-icon" class="iw_table_icon"></td>
+                <td id="iw-url"></td>
+                </tr>
+                <tr id="iw-address-row" class="iw_table_row">
+                <td class="iw_attribute_name">Address:</td>
+                <td id="iw-address"></td>
+                </tr>
+                <tr id="iw-phone-row" class="iw_table_row">
+                <td class="iw_attribute_name">Telephone:</td>
+                <td id="iw-phone"></td>
+                </tr>
+                <tr id="iw-rating-row" class="iw_table_row">
+                <td class="iw_attribute_name">Rating:</td>
+                <td id="iw-rating"></td>
+                </tr>
+                <tr id="iw-website-row" class="iw_table_row">
+                <td class="iw_attribute_name">Website:</td>
+                <td id="iw-website"></td>
+                </tr>
+            </table>
+            </div>
+        </div>
     </div>
 
-  </div>
-  <script src="script.js"></script>
-
+  <script src="about.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDkevaDGz23RoPFkAmtHmOYQQQXwhnfS5E&libraries=places&callback=initMap"async defer></script>
 </body>
 
 </html>
