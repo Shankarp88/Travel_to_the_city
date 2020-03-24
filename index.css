@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #movie-cont {
     float:left;
     margin-left: 5px;
@@ -16,6 +17,98 @@
     background-color: rgb(57, 80, 184);
     border-radius: 25px;
 }
+=======
+#body{
+font-family: Arial, Helvetica, sans-serif;
+padding: 0;
+margin: 0;
+background-attachment: #f4f4f4;
+}
+
+.container{
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+ul{
+    margin:0;
+    padding:0;
+}
+
+header{
+    background: #35424a;
+    color: #ffffff;
+    padding-top: 30px;
+    min-height: 70px;
+    border-bottom: #e8491d 3px solid;
+}
+
+header a{
+    color: #ffffff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 16px;
+}
+
+
+header li{
+    /*float: left;*/
+    display: inline;
+    padding: 0 20px 0 20px;
+}
+
+header #branding{
+    float:left;
+}
+
+header #branding h1{
+    margin:0;
+}
+
+header nav{
+    float:right;
+    margin-top: 10px;
+}
+
+header .highlight, header .current a{
+    color: #e8491d;
+    font-weight: bold;
+}
+
+header a:hover {
+    color: #cccccc;
+    font-weight: bold;
+}
+
+
+.button_1{
+    height: auto;
+    position: relative;
+    top: 100px;
+    right: 140px;    
+}
+
+#movie-cont{
+
+    float:left;
+    margin-left: 5px;
+    padding-left: 5px;
+    /*border: 2px solid green;*/
+    
+    }
+    #date-picker-cont{
+        padding-left: 7px;
+        float:left;
+    }
+    #wez-type{
+        /*background-color: greenyellow;*/
+        padding: 7px;
+        margin: 7px;
+        background-color: rgb(57, 80, 184);
+        border-radius: 25px;
+        
+>>>>>>> Homepage edited
 
 body {
     background-image: url("https://trello-backgrounds.s3.amazonaws.com/SharedBackground/original/62e82e1930f6baca939a2d765312efb0/photo-1581896184337-1330180ac3e6");
