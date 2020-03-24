@@ -15,7 +15,7 @@
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Bootstrap 4 DatePicker</title>
+  <title>TravelToTheCity | Welcome</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -29,13 +29,29 @@
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <link rel="stylesheet" href="index.css">
 
-  <title>TravelToTheCity</title>
+
 </head>
 
 <body>
+  <header>
+    <div class="container">
+      <div id="branding">
+        <h1><span class="highlight">Travel</span> To The City</h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href= "index.html">Home</a></li>
+          <li><a href= "explore.html">Explore</a></li>
+        </ul>
+      </nav>
+    </div> 
+  </header>
+
+
+
   <div class="movie-cont">
     <div id= "date-picker-cont">
-      <h3>Date Picker</h3>
+      <h3>Pick Date</h3>
       <div class='input-group date' id='picker' style="width: 400px">
         <input type="text" id="picker" class="form-control" placeholder="Select Date">
         <span class="input-group-addon">
@@ -44,8 +60,8 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-12 header text-center">
-        <button id="weatherbutton">City Weather forcast</button>
+      <div class="col-12 header text-left">
+        <button id="weatherbutton" class= "button_1">Weather Forecast</button>
 
       </div>
       <div id="movie-cont" class="row">
@@ -64,6 +80,8 @@
   </div>
   <script src="script.js"></script>
 
+
 </body>
+
 
 </html>
