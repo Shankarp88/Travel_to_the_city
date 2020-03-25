@@ -6,9 +6,10 @@ $(function () {
   var weatherButton =document.getElementById('weatherbutton')
   weatherButton.addEventListener('click', function () {
     var moviescontaienr = document.getElementById('movie-cont')
-    var city = 'Atlanta'
-    
+    var city = document.getElementById("Search").value
+
     axios.get(`http://api.openweathermap.org/data/2.5/forecast?q=${city}&APPID=22e96771fcd3de05e9991d8fb79ebb4a`)
+    
     
       .then(function (response) {
         var test = (response);
