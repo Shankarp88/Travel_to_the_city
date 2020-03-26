@@ -2,7 +2,6 @@ $(function () {
     $('#picker').datetimepicker();
   });
   
-  
   var weatherButton =document.getElementById('weatherbutton')
   weatherButton.addEventListener('click', function () {
     var moviescontaienr = document.getElementById('movie-cont')
@@ -50,4 +49,25 @@ $(function () {
         console.log(err);
       });
     
-  })
+})
+
+var map, places;
+var autocomplete;
+
+function initMap() {
+  autocomplete = new google.maps.places.Autocomplete(
+    /** @type {!HTMLInputElement} */ (
+        document.getElementById('autocomplete')), {
+      types: ['(cities)'],
+    });
+  places = new google.maps.places.PlacesService(map);
+
+  autocomplete.addListener('place_changed', onPlaceChanged);
+};
+
+
+function onPlaceChanged() {
+  var place = autocomplete.getPlace();
+
+  // add search onchange function here (pull up about page with weather and map with attractions)
+}

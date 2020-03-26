@@ -31,17 +31,68 @@
 </head>
 
 <body>
-    <div id="map-canvas">
-        <div class="hotel-search">
-            <div id="findhotels">
-            Find tourist attractions in:
-            </div>
-
-            <div id="locationField">
-            <input id="autocomplete" placeholder="Enter a city" type="text" />
-            </div>
-
+    <header>
+      <div class="container">
+        <div id="branding">
+          <h1><span class="highlight">Travel</span> To The City</h1>
         </div>
+        <nav>
+          <ul>
+            <li><a href= "index.html">Home</a></li>
+            <li><a href= "explore.html">Explore</a></li>
+          </ul>
+        </nav>
+      </div> 
+  </header>
+
+    <div id="top">
+      <div class="hotel-search">
+        <div id="findhotels">
+        Pick a city:
+        </div>
+
+        <div id="locationField">
+        <input id="autocomplete" placeholder="Enter a city" type="text" />
+        </div>
+
+      </div>
+
+    </div>
+
+    <div id="map-canvas">
+
+      <div>
+        
+
+        <div id="weather">
+          <div class="city-date">
+            <div id= "date-picker">
+              <div class='input-group date' id='picker'>
+                <input type="text" id="picker" class="form-control" placeholder="Select Date">
+                <span class="input-group-addon">
+                  <span class="glyphicon glyphicon-calendar"></span>
+                </span>
+              </div>
+            </div>
+            
+            <div class="header text-center">
+              <input type='text' id="Search" placeholder="Search for city" /> 
+              <button id="weatherbutton">City Weather Forecast</button>
+            
+            </div>
+          </div>
+          <div weather-data>
+  
+            <!-- Weather SHOW UP HERE! -->
+  
+          </div>
+  
+  
+  
+        </div>
+  
+      </div>
+
 
         <div id="map"></div>
 
