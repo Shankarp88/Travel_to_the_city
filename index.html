@@ -37,6 +37,16 @@
   </header>
 
 
+  <div class="hotel-search">
+    <div id="findhotels">
+    Find tourist attractions in:
+    </div>
+
+    <div id="locationField">
+    <input id="autocomplete" placeholder="Enter a city" type="text" />
+    </div>
+
+  </div>
 
   <div class="movie-cont">
     <div id= "date-picker-cont">
@@ -54,8 +64,8 @@
         <button id="weatherbutton">City Weather Forecast</button>
        
       </div>
-      <div id="movie-cont" class="row">
-        <div class="col-12 results">
+      <div id="movie-cont">
+        <div>
 
           <!-- Weather SHOW UP HERE! -->
 
@@ -69,7 +79,7 @@
 
   </div>
   <script src="script.js"></script>
-
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDkevaDGz23RoPFkAmtHmOYQQQXwhnfS5E&libraries=places&callback=initMap"async defer></script>
 
 </body>
 
