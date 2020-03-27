@@ -82,10 +82,6 @@ function initMap() {
   places = new google.maps.places.PlacesService(map);
 
   autocomplete.addListener('place_changed', onPlaceChanged);
-
-  // Add a DOM event listener to react when the user selects a country.
-  document.getElementById('country').addEventListener(
-      'change', setAutocompleteCountry);
 }
 
 // When the user selects a city, get the place details for the city and
@@ -99,7 +95,48 @@ function onPlaceChanged() {
   } else {
     document.getElementById('autocomplete').placeholder = 'Enter a city';
   }
-}
+  var late = place.geometry.location.lat()
+  var long = place.geometry.location.lng()
+  console.log(late)
+  console.log(long)
+
+  var weathercontainer = document.getElementById('weather-data')
+  $('#weather-data').empty();
+    axios.get(`https://api.openweathermap.org/data/2.5/forecast?lat=${late}&lon=${long}&appid=22e96771fcd3de05e9991d8fb79ebb4a`)    
+    .then(function (response) {
+      var test = (response);
+      console.log(response.data.city);
+      test.data.list.map(function (values) {
+        console.log(test.data.list);
+        var date = document.createElement('div');
+        date.setAttribute('id', 'wez-type')
+        date.setAttribute('style', "color:black")
+        var Temprature = document.createElement('p');
+        var Humidity = document.createElement('p');
+        var Expected = document.createElement('p');
+        var icon = document.createElement('img')
+        icon.setAttribute('src', "http://www.caspian.mmwebmet.com/img/legendIcons/sunny-fair.png");
+        icon.style.height = "50px";
+        icon.style.width = "50px";
+        date.innerHTML = 'Date/Time: ' + values.dt_txt;
+        Temprature.innerHTML = 'Temprature: ' + (((values.main.temp-273.15)*1.8)+32).toFixed(0) +'℉';
+        Humidity.innerHTML = 'Humidity: ' + values.main.humidity + '%';
+        Expected.innerHTML = 'Expected: ' + values.weather.map(function(weather){
+          return `
+          ${weather.description}
+          `
+        });
+        date.appendChild(Temprature);
+        date.appendChild(Humidity);
+        date.appendChild(Expected);
+        date.appendChild(icon);
+        weathercontainer.appendChild(date);
+      });
+    })
+    .catch(err => {
+      console.log(err);
+    });
+};
 
 // Search for tourist attractions in the selected city, within the viewport of the map.
 function search() {
@@ -141,19 +178,6 @@ function clearMarkers() {
     }
   }
   markers = [];
-}
-
-function setAutocompleteCountry() {
-  var country = document.getElementById('country').value;
-  if (country == 'all') {
-    map.setCenter({lat: 15, lng: 0});
-    map.setZoom(2);
-  } else {
-    map.setCenter(countries[country].center);
-    map.setZoom(countries[country].zoom);
-  }
-  clearResults();
-  clearMarkers();
 }
 
 function dropMarker(i) {
@@ -259,52 +283,3 @@ function buildIWContent(place) {
 $(function () {
     $('#picker').datetimepicker();
   });
-  
-  var weatherButton = document.getElementById('weatherbutton')
-  weatherButton.addEventListener('click', function () {
-    var weathercontainer = document.getElementById('weather')
-    var city = document.getElementById("Search").value
-
-    axios.get(`http://api.openweathermap.org/data/2.5/forecast?q=${city}&APPID=22e96771fcd3de05e9991d8fb79ebb4a`)
-    
-    
-      .then(function (response) {
-        var test = (response);
-        console.log(response.data.city)
-        test.data.list.map(function (values) {
-          console.log(test.data.list)
-          var text = document.createElement('div');
-          text.setAttribute('id', 'wez-type')
-          text.setAttribute('style', "color:black")
-          var text7 = document.createElement('p');
-          var text1 = document.createElement('p');
-          var text2 = document.createElement('p');
-          var text3 = document.createElement('p');
-          var text4 = document.createElement('p');
-          var text5 = document.createElement('p');
-          var text6 = document.createElement('p');
-          var text7 = document.createElement('p');
-    
-          text.innerHTML = 'City :' + test.data.city.name;
-          text7.innerHTML = 'Date :' + values.dt_txt;
-          text1.innerHTML = 'Temprature :' + values.main.temp;
-          text2.innerHTML = `Feels like : ${values.main.feels_like}`;
-          text3.innerHTML = 'Temp Max :' + values.main.temp_max;
-          text4.innerHTML = 'Temp Min :' + values.main.temp_min;
-          text5.innerHTML = 'Pressure :' + values.main.pressure;
-          text6.innerHTML = 'Humidity :' + values.main.humidity;
-          weathercontainer.appendChild(text)
-          text.appendChild(text7)
-          text.appendChild(text1)
-          text.appendChild(text2)
-          text.appendChild(text3)
-          text.appendChild(text4)
-          text.appendChild(text5)
-          text.appendChild(text6)
-        })
-      })
-      .catch(err => {
-        console.log(err);
-      });
-    
-})
